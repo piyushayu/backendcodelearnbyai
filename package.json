@@ -1,0 +1,44 @@
+{
+  "name": "backbyai",
+  "version": "1.0.0",
+  "description": "Backend code learn by ai",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "xss:reflected": "tsx Authentication/1-reflected-xss.ts",
+    "xss:stored": "tsx Authentication/2-stored-xss.ts",
+    "xss:dom": "tsx Authentication/3-dom-xss.ts",
+    "xss:mutation": "tsx Authentication/4-mutation-xss.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piyushayu/backendcodelearnbyai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/piyushayu/backendcodelearnbyai/issues"
+  },
+  "homepage": "https://github.com/piyushayu/backendcodelearnbyai#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "morgan": "^1.12.1"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
