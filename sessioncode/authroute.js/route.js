@@ -100,3 +100,14 @@ router.post("/logout", (req, res) => {
 
 module.exports = router;
 module.exports.users = users;
+
+// To run your session authentication server:
+
+// bash
+// npm run session
+// The server will start on http://localhost:5001 with endpoints:
+
+// POST /api/auth/register
+// POST /api/auth/login
+// GET /api/auth/me
+// POST /api/auth/logout
