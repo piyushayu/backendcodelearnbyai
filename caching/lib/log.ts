@@ -88,12 +88,12 @@ export const log = {
   },
 
   dbRead(ns: string, sql: string, ms: number): void {
-    emit('db-read', ns, `SELECT ${sql}  [${ms}ms]`, ms);
+    emit('db-read', ns, `SELECT ${sql}`, ms);
     counters(ns).dbReads++;
   },
 
   dbWrite(ns: string, sql: string, ms: number): void {
-    emit('db-write', ns, `UPDATE ${sql}  [${ms}ms]`, ms);
+    emit('db-write', ns, `UPDATE ${sql}`, ms);
     counters(ns).dbWrites++;
   },
 
@@ -125,5 +125,13 @@ export const log = {
     buffer.length = 0;
     stats.clear();
     nextId = 1;
+  },
+
+  /** Clears one module's log lines and counters, leaving the others intact. */
+  resetNamespace(ns: string): void {
+    for (let i = buffer.length - 1; i >= 0; i -= 1) {
+      if (buffer[i].ns === ns) buffer.splice(i, 1);
+    }
+    stats.delete(ns);
   },
 };
